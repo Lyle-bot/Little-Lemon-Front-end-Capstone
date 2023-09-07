@@ -1,8 +1,17 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { MemoryRouter } from 'react-router-dom'; // If using React Router
+import BookingPage from './components/BookingPage';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('Renders the BookingPage heading', () => {
+  render(
+    <MemoryRouter> {/* If your component uses React Router */}
+      <BookingPage />
+    </MemoryRouter>
+  );
+  const headingElement = screen.getByText('Reserve a table at Little Lemon'); 
+  expect(headingElement).toBeInTheDocument();
 });
+
+
+
+

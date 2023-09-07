@@ -4,11 +4,20 @@ import Platter from './../images/restauranfood.jpg'
 import CardComponent from './CardComponent';
 import GreekSalad from './../images/greek salad.jpg'
 import Bruchetta from './../images/bruchetta.svg'
+import FounderA from './../images/Mario and Adrian A.jpg'
+import FounderB from './../images/Mario and Adrian b.jpg'
+import TestimonialCard from './TestimonialCard';
+import Face1 from './../images/face1.jpeg'
+import Face2 from './../images/face2.jpeg'
+import Face3 from './../images/face3.jpeg'
+import Face4 from './../images/face4.jpeg'
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
       <main>
-              <section role='Hero section' className='p-4 rounded' style={{ backgroundColor: '#495e57'  }}>
+         {/* Hero section*/}
+      <section  className='p-4 rounded' style={{ backgroundColor: '#495e57'  }}>
       
       <div className='row'>
           <div className='col ps-5'>
@@ -18,7 +27,8 @@ const Home = () => {
       focused on traditional<br></br>recipes served with a modern<br></br>
       twist.
       </p>
-      <button className='btn' style={{backgroundColor:"#f4ce14"}}>Reserve a table</button>
+   
+      <Link to="/booking-page" className="btn" style={{backgroundColor:"#f4ce14"}}>Reserve a table</Link>
 
           </div>
           <div className='col position-relative d-none d-md-block '>
@@ -41,14 +51,15 @@ const Home = () => {
     </section>
 
  
-
-    <section role='Highlights' className='mt-5'>
+       {/* THighlights*/}
+    <section  className='mt-5'>
       <div className='row'>
         <div className='col-6 p-5 '>
           <h2>This weeks specials!</h2>
         </div>
         <div className='col-4  p-5 offset-1'>
-          <button className='btn' style={{backgroundColor:"#f4ce14"}}>Online Menu</button>
+         
+          <Link to="/menu" className="btn" style={{backgroundColor:"#f4ce14"}}>Online Menu</Link>
         </div>
       </div>
      
@@ -83,12 +94,59 @@ const Home = () => {
       </div>
      
     </section>
- 
-
-    <section role='Testimonials'>
+     <hr></hr>
+      {/* Testimonials */}
+    <section >
+      <div className='row mt-5'>
+        <div className='col ps-5 ps-md-0 pb-4'>
+        <TestimonialCard 
+        name="Jennifer J."
+        rating="★★★★★"
+        photo={Face1}
+        review="This restaurant is amazing. The atmosphere is cozy and the food is divine!"
+      />
+        </div>
+        <div className='col ps-5 ps-md-0 pb-4'>
+        <TestimonialCard 
+        name="Dennis D."
+        rating="★★★★★"
+        photo={Face2}
+        review="Little Lemon is a hidden gem. The staff is incredibly welcoming and the dishes are a culinary delight!"
+      />
+        </div>
+        <div className='col ps-5 ps-md-0 pb-4'>
+        <TestimonialCard 
+        name="Alexia P."
+        rating="★★★★★"
+        photo={Face3}
+        review="I can't get enough of their menu. Every dish is a work of art, both visually and in flavor!"
+      />
+        </div>
+        <div className='col ps-5 ps-md-0 pb-4'>
+        <TestimonialCard 
+        name="Larry W."
+        rating="★★★★★"
+        photo={Face4}
+        review="What a fantastic dining experience! The modern twists on traditional recipes are absolutely genius!"
+      />
+        </div>
+      </div>
 
     </section>
-    <section role='about'></section>
+
+     {/* About Section*/}
+     <hr></hr>
+    <section >
+      <div className='row mt-5'>
+        <div className='col-12 col-md'><p className='p-2'>Founded by brothers Mario and Adrian, Little Lemon is a family-owned Mediterranean restaurant nestled in the heart of Chicago. We honor timeless recipes from the Mediterranean, served with a modern twist that makes each dish uniquely ours. Our culinary philosophy emphasizes fresh ingredients and vibrant flavors in an atmosphere that feels like home. Come experience the rich traditions and modern flair that only Little Lemon can offer.</p> </div>
+        <div className='col-12 col-md'>
+          <img src={FounderA} className="card-img-top pt-4" alt="founder pictures" />
+         
+          </div>
+          <div className='col-12 col-md'><img  src={FounderB} className="card-img-top pt-2" alt="..." /></div>
+      </div>
+
+    </section>
      
       </main>
     );
